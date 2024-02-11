@@ -52,6 +52,7 @@ const Job = ({
   location,
   languages,
   tools,
+  fnSetJob,
 }) => {
   const logoImage = imageMap[logo];
 
@@ -74,14 +75,16 @@ const Job = ({
         </CompanyInfoWrapper>
       </CompanyWrapper>
       <TagWrapper>
-        <TagJob tagName={role} />
-        <TagJob tagName={level} />
+        <TagJob tagName={role} fnJobFilter={fnSetJob} />
+        <TagJob tagName={level} fnJobFilter={fnSetJob} />
         {languages.length > 0 &&
           languages.map((language) => (
-            <TagJob tagName={language} key={language} />
+            <TagJob tagName={language} key={language} fnJobFilter={fnSetJob} />
           ))}
         {tools.length > 0 &&
-          tools.map((tools) => <TagJob tagName={tools} key={tools} />)}
+          tools.map((tools) => (
+            <TagJob tagName={tools} key={tools} fnJobFilter={fnSetJob} />
+          ))}
       </TagWrapper>
     </JobCard>
   );

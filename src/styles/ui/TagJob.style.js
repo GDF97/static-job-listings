@@ -10,4 +10,9 @@ export const TagJobStyle = styled.button`
   background-color: ${tagBackgroundColor};
   color: ${highlightColor};
   cursor: pointer;
+
+  &:hover {
+    background-color: ${highlightColor};
+    color: ${tagBackgroundColor};
+  }
 `;

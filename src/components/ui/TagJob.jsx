@@ -1,10 +1,12 @@
 import { TagJobStyle } from "../../styles/ui/TagJob.style";
 
-const TagJob = ({ tagName }) => {
+const TagJob = ({ tagName, fnJobFilter }) => {
   return (
     <TagJobStyle
       value={tagName}
-      onClick={(e) => console.log(e.currentTarget.value)}
+      onClick={(e) => {
+        fnJobFilter(e.currentTarget.value);
+      }}
     >
       {tagName}
     </TagJobStyle>

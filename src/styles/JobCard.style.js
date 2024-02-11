@@ -11,3 +11,10 @@ export const JobCard = styled.div`
   padding: 2rem 3rem;
   border-radius: 4px;
 `;
+
+export const HeaderCard = styled(JobCard)`
+  height: fit-content;
+  padding: 1.5rem 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+`;
